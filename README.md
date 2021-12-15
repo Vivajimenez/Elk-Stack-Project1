@@ -54,7 +54,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 40..71.174.86        |
+| Jump Box | Yes                 | 40.71.174.86         |
 | Web01    | No                  | 10.0.0.11            |
 | Web02    | no                  | 10.0.0.10            |
 
