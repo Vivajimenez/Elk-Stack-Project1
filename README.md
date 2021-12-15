@@ -6,9 +6,9 @@ The files in this repository were used to configure the network depicted below.
 ![RedTeam Diagram](https://user-images.githubusercontent.com/90080030/146150661-25b64bf6-1ed5-4b00-b533-75015af9a051.png)
 
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the my_playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+  my_playbook.yml
 
 This document contains the following details:
 - Description of the Topologu
@@ -23,31 +23,31 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly available, in addition to restricting incoming traffic to the network.
+Load balancers protect the availability of the servers and it will switch loads. Jumpbox isolates points of entry to the network, only ssh can be used on the allowed public IP address. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the metrics and system log.
+Filebeat is good for monitoring and collecting log files from Virtual Machines.
+Metricbeat records the health of a computer.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Jump Box | Gateway  | 10.0.0.4   | Linux            |
+| Web01    | Webserver| 10.0.0.11  | Linux            |
+| Web02    | Webserver| 10.0.0.10  | Linux            |
+| Elk      |Monitoring| 40.83.17.254 & 10.1.0.5|Linux |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+40.71.174.86
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by Jumpbox.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
