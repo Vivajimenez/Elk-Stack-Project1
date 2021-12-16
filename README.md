@@ -86,9 +86,9 @@ We have installed the following Beats on these machines:
 -Filebeat and Metricbeat
 
 These Beats allow us to collect the following information from each machine:
--Filebeat helps generate and organize log files to send to Logstash and Elasticsearch. It logs information about the file system, including which files have changed and when.(ex: it keeps track of sudo commands,ssh logins and new users/groups on yur vm's.)
+-Filebeat helps generate and organize log files to send to Logstash and Elasticsearch. It logs information about the file system, including which files have changed and when.(ex: it keeps track of sudo commands,ssh logins and new users/groups on your vm's.)
 
--Metricbeat monitors the health of your Virtual Machines. It also collects metrics from the operating system CPU usage and active services runned by the server.
+-Metricbeat monitors the usage of your Virtual Machines. It also collects metrics from the operating system CPU usage and active services runned by the server.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -100,13 +100,15 @@ SSH into the control node and follow the steps below:
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? 
-filebeat-playbook.yml
+install-ElK.yml file 
 - Where do you copy it?
-/etc/ansible/files/filebeat-config.yml
+/etc/ansible/
 - _Which file do you update to make Ansible run the playbook on a specific machine?
-nano filebeat-confi.yml
+/etc/ansible# ansible-playbook filebeat-playbook.yml
 -   How do I specify which machine to install the ELK server on versus which to install Filebeat on?
   filebeat-config.yml
 - _Which URL do you navigate to in order to check that the ELK server is running?
 http://40.83.17.254:5601/app/kibana
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+ansible-playbook filebeat-playbook.yml
+ansible-playbook metricbeat-playbook.yml
