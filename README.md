@@ -29,16 +29,16 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly available, in addition to restricting incoming traffic to the network.
 Load balancers protect the availability of the servers and it will switch loads. Jumpbox isolates points of entry to the network, only ssh can be used on the allowed public IP address. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the metrics and system log.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the metrics and system files.
 Filebeat is good for monitoring and collecting log files from Virtual Machines.
-Metricbeat records the health of a computer.
+Metricbeat records the usage of a computer.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.4   | Linux            |
+| Jump Box | Gateway  |40.71.174.86 & 10.0.0.4 | Linux  |
 | Web01    | Webserver| 10.0.0.11  | Linux            |
 | Web02    | Webserver| 10.0.0.10  | Linux            |
 | Elk      |Monitoring| 40.83.17.254 & 10.1.0.5|Linux |
@@ -48,9 +48,9 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-40.71.174.86
+-my public IP
 
-Machines within the network can only be accessed by Jumpbox. With private IP 10.0.0.4 
+Machines within the network can only be accessed by Jumpbox. With my private IP  
 
 
 A summary of the access policies in place can be found in the table below.
@@ -64,7 +64,7 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-The configuration is much quicker than when done manually. Ansible can be run by the command line and its preferred to install and configure through here because it minimizes potential errors.
+The configuration is much quicker than when done manually. Ansible can be run by the command line and its preferred to install and configure through here because it minimizes potential errors. Ansible enables automation.
 
 The playbook implements the following tasks:
 
